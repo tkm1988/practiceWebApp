@@ -10,11 +10,8 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
-CMD ["/usr/sbin/init"]
-CMD ["curl -s https://setup.ius.io/ | bash"]
-CMD ["yum update -y"]
-CMD ["yum install python36u python36u-libs python36u-devel python36u-pip httpd.x86_64 -y"]
-CMD ["pip3.6 install --upgrade pip"]
-CMD ["pip3.6 install django"]
-
-
+COPY ./opt /opt
+WORKDIR /opt
+RUN chmod 744 startup.sh
+RUN ./startup.sh
+CMD ["/bin/bash"]
