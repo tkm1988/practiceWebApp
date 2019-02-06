@@ -7,3 +7,5 @@
 * Python3.6をpythonで起動できるようにする
   - <http://gamsj2015.hatenablog.com/entry/2018/02/18/110419>
   - yumが2.7で実装されているので注意
+* Dockerでロケールを変更する（CentOSで）
+  - <https://qiita.com/yuki2006/items/6cea8c352e38f047b52a#comment-8e863c71962008035d0d>
